@@ -41,9 +41,11 @@ Wi-Fi経由でスマホから開き、共有メニューから「ホーム画面
 
 上記のローカルサーバーは初回ロード用です。iPhoneのService WorkerはHTTPS（またはlocalhost）でないと正しく登録されないため、`http://<LAN IP>:3000` のままだと、Wi-Fiの外に出た時にオフラインキャッシュが効かない場合があります。
 
-外出先でも確実に使えるようにするには、`public/` フォルダを無料の静的ホスティング（GitHub Pages、Cloudflare Pages、Netlifyなど）にHTTPSで公開し、そのURLをスマホでホーム画面に追加するのがおすすめです。公開後はMacを起動しておく必要は一切なくなります。
+このリポジトリはGitHub Pagesで公開されており、`main`ブランチにpushするたびに [.github/workflows/deploy-pages.yml](.github/workflows/deploy-pages.yml) が自動的に`public/`フォルダを配信します（手動でのビルドやSettings操作は不要）。
 
-GitHub Pagesの場合、リポジトリの Settings → Pages で公開元を選択するだけでビルド不要でそのまま配信できます（`public/` を公開ルートにする設定、または `public/` の中身をリポジトリ直下に配置する運用のいずれかを選んでください）。
+**公開URL:** https://oyamaj-kivi.github.io/mangahondana-app/
+
+スマホでこのURLを開き、共有メニューから「ホーム画面に追加」してください。以後はMacを起動していなくても、Wi-Fiがなくても単独で起動できます（新刊チェックのみインターネット接続が必要）。
 
 ## 新刊チェックの設定
 
