@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>漫画コレクション管理</title>
+  <meta name="theme-color" content="#14161c" />
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="icon" href="/icons/icon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header>
+    <h1>📚 漫画コレクション <span id="new-release-badge"></span></h1>
+    <div class="toolbar">
+      <button id="add-toggle-btn" class="primary">+ 作品を追加</button>
+      <button id="check-btn" class="ghost">新刊チェック</button>
+      <button id="settings-toggle-btn" class="ghost" aria-label="設定">⚙️</button>
+    </div>
+    <div class="status-line" id="status-line"></div>
+  </header>
+
+  <main>
+    <div id="add-form-panel" class="form-panel">
+      <div class="field">
+        <label>作品名</label>
+        <input id="f-title" placeholder="例: ONE PIECE" />
+      </div>
+      <div class="field">
+        <label>作者（任意）</label>
+        <input id="f-author" placeholder="例: 尾田栄一郎" />
+      </div>
+      <div class="field">
+        <label>検索キーワード（新刊チェック用・任意。未入力なら作品名を使用）</label>
+        <input id="f-keyword" placeholder="例: ONE PIECE" />
+      </div>
+      <div class="field">
+        <label>持っている巻（任意）例: 1-10,12,14</label>
+        <input id="f-volumes" placeholder="1-10,12,14" />
+      </div>
+      <div class="field">
+        <label>ステータス</label>
+        <select id="f-status">
+          <option value="ongoing">連載中（新刊チェック対象）</option>
+          <option value="completed">完結済み（新刊チェック対象外）</option>
+        </select>
+      </div>
+      <div class="actions">
+        <button id="add-cancel-btn" class="ghost">キャンセル</button>
+        <button id="add-submit-btn" class="primary">追加する</button>
+      </div>
+    </div>
+
+    <div id="settings-panel" class="form-panel">
+      <div class="field">
+        <label>楽天ウェブサービス アプリID（新刊チェック用・任意）</label>
+        <input id="f-rakuten-app-id" placeholder="楽天デベロッパーで取得したアプリID" />
+      </div>
+      <div class="actions">
+        <button id="settings-cancel-btn" class="ghost">閉じる</button>
+        <button id="settings-save-btn" class="primary">保存</button>
+      </div>
+    </div>
+
+    <div id="new-release-panel" class="new-release-panel" style="display:none">
+      <h2>🆕 新刊が見つかりました</h2>
+      <div id="new-release-items"></div>
+    </div>
+
+    <div id="series-list" class="series-list"></div>
+  </main>
+
+  <div id="toast" class="toast"></div>
+
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

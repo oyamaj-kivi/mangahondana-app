@@ -1,0 +1,13 @@
+{
+  "name": "manga-app",
+  "version": "1.0.0",
+  "description": "手持ちの漫画を管理し、抜けている巻や新刊をチェックするための軽量アプリ（データは端末内IndexedDBに保存）",
+  "type": "commonjs",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
