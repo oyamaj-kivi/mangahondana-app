@@ -1,2 +1,21 @@
+# dependencies
 node_modules/
+
+# environment variables (this project currently has no secrets, but keep this as a safety net)
+.env
+.env.local
+.env.development
+.env.production
+.env*.local
+
+# build output (not currently used by this project, kept for safety)
+dist/
+build/
+.next/
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+
+# local tooling downloaded for this session (portable gh CLI binary)
 .tools/
