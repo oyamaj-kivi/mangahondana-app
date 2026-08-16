@@ -1,15 +1,15 @@
-const CACHE_NAME = 'manga-app-v2';
+const CACHE_NAME = 'manga-app-v3';
 const STATIC_ASSETS = [
-  '/',
-  '/index.html',
-  '/style.css',
-  '/app.js',
-  '/idb.js',
-  '/logic.js',
-  '/rakuten-client.js',
-  '/store.js',
-  '/manifest.json',
-  '/icons/icon.svg',
+  './',
+  './index.html',
+  './style.css',
+  './app.js',
+  './idb.js',
+  './logic.js',
+  './rakuten-client.js',
+  './store.js',
+  './manifest.json',
+  './icons/icon.svg',
 ];
 
 self.addEventListener('install', (event) => {
